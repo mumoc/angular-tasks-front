@@ -1,3 +1,3 @@
-App.controller 'TasksCtrl', ['$scope', ($scope) ->
-  $scope.message = 'Yupi yei'
+App.controller 'TasksCtrl', ['$scope', 'Task',($scope, Task) ->
+  $scope.tasks = Task.fetch()
 ]

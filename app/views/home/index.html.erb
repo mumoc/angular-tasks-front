@@ -1,3 +1,8 @@
 <div ng-controller='TasksCtrl'>
-  <p>{{message}}</p>
+  <ul>
+    <li ng-repeat='task in tasks'>
+      <h3>{{task.title}}</h3>
+      <p>{{task.content}}</p>
+    </li>
+  </ul>
 </div>
