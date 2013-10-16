@@ -1,7 +1,10 @@
 <div ng-controller='TasksCtrl'>
   <ul>
     <li ng-repeat='task in tasks' ng-click='showTask(task)'>
-      <h3>{{task.title}}</h3>
+    <h3>
+      {{task.title}}
+      <small>{{task.created_at | date: 'medium'}}</small>
+    </h3>
     </li>
   </ul>
 
