@@ -9,4 +9,8 @@ App.controller 'TasksCtrl', ['$scope', 'Task',($scope, Task) ->
   #Set selected task
   $scope.showTask = (task) ->
     $scope.activeTask = task
+
+  $scope.saveTask = (task) ->
+    task = new Task task
+    task.$save()
 ]

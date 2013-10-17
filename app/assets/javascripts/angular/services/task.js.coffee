@@ -1,5 +1,5 @@
 App.factory 'Task', ['$resource', ($resource) ->
-  $resource 'http://api-tasks.herokuapp.com/api/tasks/:id',
+  $resource 'http://tasks-api.dev/api/tasks/:id',
     { id: '@id', callback: 'JSON_CALLBACK' },
-    fetch: { method: 'JSONP', isArray: true }
+    fetch: { method: 'JSONP', isArray: true },
 ]
