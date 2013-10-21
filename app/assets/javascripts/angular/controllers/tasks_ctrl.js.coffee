@@ -11,6 +11,8 @@ App.controller 'TasksCtrl', ['$scope', 'Task',($scope, Task) ->
     $scope.activeTask = task
 
   $scope.saveTask = (task) ->
-    task = new Task task
-    task.$save()
+    newTask = new Task task
+    newTask.$save (savedTask) ->
+      $scope.tasks.unshift savedTask
 ]
+

@@ -1,22 +1,25 @@
-<div>
-  <form name='newTask' ng-controller='TasksCtrl' ng-submit='saveTask(task)'>
-    <input name='title' ng-model='task.title'>
-    <input name='content' ng-model='task.content'>
-    <input type='submit'>
-  </form>
-</div>
 <div ng-controller='TasksCtrl'>
-  <ul>
-    <li ng-repeat='task in tasks' ng-click='showTask(task)'>
-    <h3>
-      {{task.title}}
-      <small>{{task.created_at | date: 'medium'}}</small>
-    </h3>
-    </li>
-  </ul>
+  <div>
+    <form name='newTask' ng-submit='saveTask(task)'>
+      <input name='title' ng-model='task.title'>
+      <input name='content' ng-model='task.content'>
+      <input type='submit'>
+    </form>
+  </div>
 
-  <div id="task-details" ng-show='activeTask'>
-    <h2>{{activeTask.title}}</h2>
-    <p>{{activeTask.content}}</p>
+  <div>
+    <ul>
+      <li ng-repeat='task in tasks' ng-click='showTask(task)'>
+      <h3>
+        {{task.title}}
+        <small>{{task.created_at | date: 'medium'}}</small>
+      </h3>
+      </li>
+    </ul>
+
+    <div id="task-details" ng-show='activeTask'>
+      <h2>{{activeTask.title}}</h2>
+      <p>{{activeTask.content}}</p>
+    </div>
   </div>
 </div>
